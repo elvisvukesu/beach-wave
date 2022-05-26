@@ -1,0 +1,21 @@
+ACL's enabled
+Object writer
+Uncheck block all public access
+Enable server-side encryption - SSE-S3
+Enable static website hosting
+
+{
+  "Id": "StaticWebPolicy",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3GetObjectAllow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "Your_Bucket_ARN/*",
+      "Principal": "*"
+    }
+  ]
+}
